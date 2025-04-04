@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanos</title>
+    <link rel="icon" href="asset/img/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=IBM+Plex+Sans+Thai:wght@300;400;500&amp;family=Mitr:wght@300;400;500&amp;display=swap" rel="stylesheet">
+    <script src="asset/script.js"></script>
+    <meta content="#78acff" name="theme-color">
+    
+    <!-- CSS สำหรับเอฟเฟกต์หิมะ -->
+    <style>
+      .snowflake {
+          position: fixed;
+          top: -10px;
+          color: rgb(255, 255, 255);
+          user-select: none;
+          pointer-events: none;
+          font-size: 16px;
+          animation: snowfall linear infinite;
+      }
+
+      @keyframes snowfall {
+          to {
+              transform: translateY(100vh);
+          }
+      }
+    </style>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thanos</title>
+  <link rel="icon" href="asset/img/icon.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Sans+Thai:wght@300;400;500&family=Mitr:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    /* Navbar Styling */
+    .navbar {
+      background: rgba(169, 169, 169, 0.5); /* ความโปร่งแสง */
+      backdrop-filter: blur(6px); /* เอฟเฟกต์เบลอพื้นหลัง */
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* เงาใต้ navbar */
+      border-radius: 10px; /* เพิ่มมุมโค้ง */
+    }
+    .navbar-nav .nav-link {
+      font-family: 'IBM Plex Sans Thai', sans-serif;
+      font-weight: 500;
+      color: #fff;
+      transition: color 0.3s ease;
+    }
+    .navbar-nav .nav-link:hover {
+      color: #DCDCDC; /* สีเมนูที่เปลี่ยนเมื่อ hover */
+    }
+    .navbar-toggler {
+      border-color: rgba(255, 255, 255, 0.3); /* เปลี่ยนสี border ของปุ่ม hamburger */
+    }
+    .navbar-toggler-icon {
+      background-image: url("https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/icons/bootstrap-icons.svg#list"); /* เปลี่ยนไอคอน hamburger */
+    }
+  </style>
+</head>
+
+<body style="font-family: 'IBM Plex Sans Thai', sans-serif;">
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="asset/img/icon.png" width="50px" alt="Logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#home">HOME</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">DEV & SUPPORT</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://discord.com/invite/bxvwwq6SPU">DISCORD</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://getinficoz.netlify.app/">DOWNLOAD</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</body>
+
+  <section id="home" class="hero vh-100 d-flex align-items-center" style="padding: 80px 20px;">
+    <div class="container">
+      <h1 class="fs-1 text-center" id="Mu">INFICOZ.</h1>
+      <h1 class="fs-4 text-center" id="typingText"></h1>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const messages = [
+                "Welcome everyone to our Executor!",
+                "Enjoy using our tool!"
+            ];
+            let index = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+            const textElement = document.getElementById("typingText");
+        
+            function typeEffect() {
+                const currentMessage = messages[index];
+                if (isDeleting) {
+                    charIndex--;
+                } else {
+                    charIndex++;
+                }
+              
+                textElement.textContent = currentMessage.substring(0, charIndex);
+              
+                let typingSpeed = isDeleting ? 50 : 100; // ความเร็วลบ 50ms / พิมพ์ 100ms
+              
+                if (!isDeleting && charIndex === currentMessage.length) {
+                    typingSpeed = 2000; // หน่วง 2 วิเมื่อพิมพ์จบ
+                    isDeleting = true;
+                } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    index = (index + 1) % messages.length; // สลับข้อความ
+                }
+              
+                setTimeout(typeEffect, typingSpeed);
+            }
+          
+            typeEffect(); // เรียกใช้งานตอนโหลดหน้า
+        });
+      </script>
+    </div>
+  </section>
+
+    <hr style="border: none; height: 2px; background: linear-gradient(to right, #000, #999, #000); margin: 1px 0;">
+    <section id="about" class="section bg-light text-center" style="padding: 90px 20px;">
+      <div class="container">
+        <h1 class="fs-1 text-center" id="Mu">DEV</h1>
+        
+        <!-- ใช้ grid layout ของ Bootstrap -->
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+          <!-- Block 1: DEV -->
+          <div class="col">
+            <div class="card shadow">
+              <img src="asset/img/Dev1.png" class="card-img-top" alt="DEV Image">
+              <div class="card-body">
+                <h5 class="card-title">DEV</h5>
+                <p class="card-text">ผู้พัฒนา DISCORD.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Block 2: เขียนเว็บ -->
+          <div class="col">
+            <div class="card shadow">
+              <img src="asset/img/Dev2.png" class="card-img-top" alt="Image 3">
+              <div class="card-body">
+                <h5 class="card-title">DEV</h5>
+                <p class="card-text">ผู้พัฒนา Executor.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Block 3: Script Programming -->
+          <div class="col">
+            <div class="card shadow">
+              <img src="asset/img/Dev3.png" class="card-img-top" alt="Image 4">
+              <div class="card-body">
+                <h5 class="card-title">DEV</h5>
+                <p class="card-text">ผู้พัฒนา ระบบต่างๆ.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row justify-content-center mt-4">
+          <!-- SUPPORT 1 -->
+          <h1 class="fs-1 text-center" id="Mu">SUPPORT</h1>
+          <div class="col-7 col-md-4">
+            <div class="card shadow">
+              <img src="asset/img/Support1.png" class="card-img-top" alt="SUPPORT Image">
+              <div class="card-body">
+                <h5 class="card-title">SUPPORT</h5>
+                <p class="card-text">ผู้ที่คอยตอบทุกปัญหาใน DISCORD.</p>
+              </div>
+            </div>
+          </div>
+        
+          <!-- SUPPORT 2 -->
+          <div class="col-7 col-md-4">
+            <div class="card shadow">
+              <img src="asset/img/Support2.png" class="card-img-top" alt="SUPPORT Image">
+              <div class="card-body">
+                <h5 class="card-title">SUPPORT</h5>
+                <p class="card-text">ผู้ที่คอยช่วยเหลือและให้คำแนะนำใน DISCORD.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <hr style="border: none; height: 2px; background: linear-gradient(to right, #000, #999, #000); margin: 1px 0;">
+    <section id="projects" class="section bg-light text-center" style="padding: 80px 20px;">
+      <div class="container">
+        <h1 class="card-title">MORE.</h1>
+        <div class="row">
+          <div class="col-1 col-md-6">
+            <div class="card shadow">
+              <img src="asset/img/inficoz_team.png" class="card-img-top" alt="Project 1">
+              <div class="card-body">
+                <h5 class="card-title">ติดตามข่าวสารได้ที่</h5>
+                <p class="card-text">DISCORD & YOUTOBE</p>
+                <a href="https://www.youtube.com/@Zhinresvarant">ข่าวสาร</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-7 col-md-6">
+            <div class="card shadow">
+              <img src="asset/img/getinficoz.png" class="card-img-top" alt="Project 2">
+              <div class="card-body">
+                <h5 class="card-title">GETINFICOZ.</h5>
+                <p class="card-text">สามารถเข้าไปโหลดตัวรันได้ที่</p>
+                <a href="https://getinficoz.netlify.app/">Download</a>
+              </div>
+            </div>
+          </div>
+    </section>
+  <!--
+    <article id="skills">
+      <h2 class="text-center">My Skill</h2>
+      <div class="container gap-5" style="padding: 1px;">
+        <div class="row d-flex align-items-center justify-content-center flex-column flex-md-row gap-1">
+          <div class="col">
+            <div class="card bg-light text-dark">
+              <div class="card-body d-flex justify-content-between align-items-center shadow">
+                <div>
+                  <h2>เขียนโปร Roblox ได้</h2>
+                  <span>ปัจจุบันมีค่ายโปรรายได้พอมีกิน</span>
+                </div>
+                <img class="img-thumbnail" src="asset/img/icon.png" width="80" alt="Logo">
+              </div>
+            </div>
+            <div class="card bg-light text-dark">
+              <div class="card-body d-flex justify-content-between align-items-center shadow">
+                <div>
+                  <h2>เขียนเว็บพอได้ครับ</h2>
+                  <span>ผมฝึกมา 1 ปีละยังไม่เก่งเลย 555 ติดตามผลงานได้ที่นี้เลย</span>
+                </div>
+                <img class="img-thumbnail" src="asset/img/website.png" width="110" alt="Logo">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  -->
+  <hr style="border: none; height: 2px; background: linear-gradient(to right, #000, #999, #000); margin: 1px 0;">
+    <section id="contact" class="section text-center" style="padding: 80px 20px;">
+      <div class="container">
+        <h2>DISCORD.</h2>
+        <p>สามารถติดต่อได้ที่</p>
+        <a class="navbar-brand" href="https://discord.gg/mpku2TJ6wu">
+          <img src="asset/img/dis.png" width="50px" alt="Logo">
+        </a>
+        <a class="navbar-brand" href="https://www.youtube.com/@Zhinresvarant">
+          <img src="asset/img/youtobe.png" width="50px" alt="Logo">
+        </a>
+      </div>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-1">
+      <div class="container">
+        <p>© 2025 INFICOZ | All Rights Reserved</p>
+      </div>
+    </footer>
+        <!-- JavaScript สำหรับสร้างหิมะ -->
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+              const numFlakes = 50; // จำนวนเกล็ดหิมะ
+              const body = document.body;
+    
+              for (let i = 0; i < numFlakes; i++) {
+                  let flake = document.createElement("div");
+                  flake.className = "snowflake";
+                  flake.innerHTML = "❄"; // ใช้สัญลักษณ์หิมะ
+                  flake.style.left = Math.random() * 100 + "vw";
+                  flake.style.animationDuration = (Math.random() * 3 + 2) + "s"; // สุ่มความเร็ว
+                  flake.style.opacity = Math.random(); // สุ่มความโปร่งใส
+                  flake.style.fontSize = Math.random() * 10 + 10 + "px"; // สุ่มขนาด
+                  body.appendChild(flake);
+              }
+          });
+        </script>
+  </body>
+</html>
