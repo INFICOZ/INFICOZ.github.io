@@ -1,0 +1,23 @@
+.snowflake {
+    position: fixed;
+    top: -10px;
+    color: rgb(255, 255, 255);
+    user-select: none;
+    pointer-events: none;
+    font-size: 16px;
+    animation: snowfall linear infinite;
+    border: 2px solid #4682b4; /* ขอบสีฟ้าเข้ม */
+    border-radius: 50%; /* ทำให้ขอบเป็นวงกลม */
+}
+
+@keyframes snowfall {
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+@keyframes snowfall {
+    to {
+        transform: translateY(100vh);
+    }
+}
