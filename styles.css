@@ -21,3 +21,21 @@
         transform: translateY(100vh);
     }
 }
+.card-tilt {
+    perspective: 1500px; /* ปรับค่ามุมมอง 3D ให้กว้างขึ้น */
+  }
+  
+  .card {
+    transform-style: preserve-3d; /* ทำให้หมุนได้ในทุกทิศทาง */
+    transition: transform 0.2s ease-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* ป้องกันไม่ให้ภาพล้นออกจากบัตร */
+  }
+  
+  .card-img-top {
+    width: 100%;
+    object-fit: cover; /* ป้องกันไม่ให้รูปภาพยืด */
+  }
+  
