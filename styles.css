@@ -25,7 +25,7 @@
     perspective: 1500px; /* ปรับค่ามุมมอง 3D ให้กว้างขึ้น */
   }
   
-  .card {
+.card {
     transform-style: preserve-3d; /* ทำให้หมุนได้ในทุกทิศทาง */
     transition: transform 0.2s ease-out;
     display: flex;
@@ -34,8 +34,38 @@
     overflow: hidden; /* ป้องกันไม่ให้ภาพล้นออกจากบัตร */
   }
   
-  .card-img-top {
+.card-img-top {
     width: 100%;
     object-fit: cover; /* ป้องกันไม่ให้รูปภาพยืด */
   }
-  
+.itim-regular {
+    font-family: "Itim", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+    /* Navbar Styling */
+    .navbar {
+        background: rgba(169, 169, 169, 0.5); /* ความโปร่งแสง */
+        backdrop-filter: blur(6px); /* เอฟเฟกต์เบลอพื้นหลัง */
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* เงาใต้ navbar */
+        border-radius: 10px; /* เพิ่มมุมโค้ง */
+      }
+      .navbar-nav .nav-link {
+        font-family: 'IBM Plex Sans Thai', sans-serif;
+        font-weight: 500;
+        color: #fff;
+        transition: color 0.3s ease;
+      }
+      .navbar-nav .nav-link:hover {
+        color: #DCDCDC; /* สีเมนูที่เปลี่ยนเมื่อ hover */
+      }
+      .navbar-toggler {
+        border-color: rgba(255, 255, 255, 0.3); /* เปลี่ยนสี border ของปุ่ม hamburger */
+      }
+      .navbar-toggler-icon {
+        background-image: url("https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/icons/bootstrap-icons.svg#list"); /* เปลี่ยนไอคอน hamburger */
+      }
+    /* การตั้งฟอนต์สำหรับ card-text */
+    .card-text {
+      font-family: 'IBM Plex Sans Thai', sans-serif;
+    }
