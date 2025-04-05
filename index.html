@@ -272,23 +272,6 @@
         </a>
       </div>
     </section>
-    
-    <div class="visitor-counter">
-      <img src="https://cdn-icons-png.flaticon.com/512/159/159604.png" alt="Eye Icon">
-      <span id="visitorCount">กำลังโหลด...</span>
-    </div>
-
-    <script>
-      // ใช้ localStorage จำลองจำนวนผู้เข้าชม
-      let count = localStorage.getItem('visitorCount');
-      if (!count) {
-        count = 1;
-      } else {
-        count = parseInt(count) + 1;
-      }
-      localStorage.setItem('visitorCount', count);
-      document.getElementById('visitorCount').textContent = `เข้าชม: ${count} ครั้ง`;
-    </script>
 
     <footer class="bg-dark text-white py-1 d-flex align-items-center justify-content-center" style="height: 50px;">
       <div class="container text-center">
