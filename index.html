@@ -317,5 +317,22 @@
               }
           });
         </script>
+
+<script>
+  // ป้องกันการลากข้อความ
+  document.addEventListener('dragstart', function (e) {
+    e.preventDefault();
+  });
+
+  // ป้องกันการคลุมข้อความ
+  document.addEventListener('selectstart', function (e) {
+    e.preventDefault();
+  });
+
+  // ป้องกันคลิกขวา
+  document.addEventListener('contextmenu', function (e) {
+    e.preventDefault();
+  });
+</script>
   </body>
 </html>
