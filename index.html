@@ -272,27 +272,7 @@
       </a>
     </div>
   </section>
-  
-  <div class="visitor-container" style="text-align: right;">
-    <img src="https://cdn-icons-png.flaticon.com/512/159/159604.png" alt="Visitor Icon" style="width: 40px; margin-right: 5px;">
-    <span id="visitorCount" style="font-size: 16px; font-weight: bold; color: #333;">กำลังโหลด...</span>
-  </div>
-  
-  <script>
-    // ดึงค่าจาก localStorage
-    let count = localStorage.getItem("visitorCount");
-  
-    // ตรวจสอบว่า count มีค่าหรือไม่ ถ้าไม่มีให้เริ่มที่ 1
-    count = count ? parseInt(count) + 1 : 1;
-  
-    // บันทึกค่ากลับไปที่ localStorage
-    localStorage.setItem("visitorCount", count);
-  
-    // แสดงผลบนหน้าเว็บ
-    document.getElementById("visitorCount").textContent = `ผู้เข้าชมทั้งหมด: ${count} ครั้ง`;
-  </script>
-          
-  
+
     <footer class="bg-dark text-white py-1 d-flex align-items-center justify-content-center" style="height: 50px;">
       <div class="container text-center">
         <h1 class="fs-5 text-center">© 𝟐𝟎𝟐𝟓 𝐈𝐍𝐅𝐈𝐂𝐎𝐙 | 𝐀𝐥𝐥 𝐑𝐢𝐠𝐡𝐭𝐬 𝐑𝐞𝐬𝐞𝐫𝐯𝐞𝐝</h1>
