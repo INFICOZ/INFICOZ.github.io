@@ -229,7 +229,7 @@
     });
   });
   </script>
-
+ 
   <!--
     <article id="skills">
       <h2 class="text-center">My Skill</h2>
@@ -272,7 +272,42 @@
         </a>
       </div>
     </section>
+    
+    <div class="visitor-counter">
+      <img src="https://cdn-icons-png.flaticon.com/512/159/159604.png" alt="Eye Icon">
+      <span id="visitorCount">กำลังโหลด...</span>
+    </div>
 
+    <script>
+      // ใช้ localStorage จำลองจำนวนผู้เข้าชม
+      let count = localStorage.getItem('visitorCount');
+      if (!count) {
+        count = 1;
+      } else {
+        count = parseInt(count) + 1;
+      }
+      localStorage.setItem('visitorCount', count);
+      document.getElementById('visitorCount').textContent = `เข้าชม: ${count} ครั้ง`;
+    </script>
+
+    <footer class="bg-dark text-white py-1 d-flex align-items-center justify-content-center" style="height: 50px;">
+      <div class="container text-center">
+        <h1 class="fs-5 text-center">© 𝟐𝟎𝟐𝟓 𝐈𝐍𝐅𝐈𝐂𝐎𝐙 | 𝐀𝐥𝐥 𝐑𝐢𝐠𝐡𝐭𝐬 𝐑𝐞𝐬𝐞𝐫𝐯𝐞𝐝</h1>
+      </div>
+    </footer>
+
+  <script>
+    // ใช้ localStorage จำลองจำนวนผู้เข้าชม
+    let count = localStorage.getItem('visitorCount');
+    if (!count) {
+      count = 1;
+    } else {
+      count = parseInt(count) + 1;
+    }
+    localStorage.setItem('visitorCount', count);
+    document.getElementById('visitorCount').textContent = `เข้าชม: ${count} ครั้ง`;
+  </script>
+  
     <footer class="bg-dark text-white py-1 d-flex align-items-center justify-content-center" style="height: 50px;">
       <div class="container text-center">
         <h1 class="fs-5 text-center">© 𝟐𝟎𝟐𝟓 𝐈𝐍𝐅𝐈𝐂𝐎𝐙 | 𝐀𝐥𝐥 𝐑𝐢𝐠𝐡𝐭𝐬 𝐑𝐞𝐬𝐞𝐫𝐯𝐞𝐝</h1>
